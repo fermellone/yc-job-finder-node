@@ -45,12 +45,4 @@ To set up and run this project, follow these steps:
 
 ## Contributors
 
-This project is maintained and developed by [Your Name or Your Team].
-
-## License
-
-This project is licensed under the [License Name]. You can find more details in the LICENSE file.
-
-## Contact
-
-If you have any questions or need assistance with this project, please contact [Your Contact Information].
+This project is maintained and developed by Fernando Mellone.
