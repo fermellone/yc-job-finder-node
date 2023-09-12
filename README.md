@@ -1,32 +1,56 @@
-# My Express Server
+# Project README
 
-This is a scaffold for an Express server with TypeScript.
+MVP Stage. The code can be improved and refactored 😆
 
-## Project Structure
+## Overview
 
-The project has the following files:
+This project aims to provide a solution for finding companies that are most similar to a given profile, based on company descriptions. It leverages various services and technologies to achieve this, including similarity search.
 
-- `src/app.ts`: This file is the entry point of the application. It creates an instance of the express app and sets up middleware and routes.
-- `src/controllers/index.ts`: This file exports a class `IndexController` which has a method `getIndex` that handles the root route of the application.
-- `src/routes/index.ts`: This file exports a function `setRoutes` which sets up the routes for the application. It uses the `IndexController` to handle the root route.
-- `src/types/index.ts`: This file exports interfaces `Request` and `Response` which extend the interfaces from the `express` library.
-- `tsconfig.json`: This file is the configuration file for TypeScript. It specifies the compiler options and the files to include in the compilation.
-- `package.json`: This file is the configuration file for npm. It lists the dependencies and scripts for the project.
-- `README.md`: This file contains the documentation for the project.
+## Functionality
+
+The core functionality of this project can be summarized as follows:
+
+1. **Data Retrieval**: The project collects information about companies from a source (YC website) to create a dataset.
+
+2. **Data Processing**: It processes this data to create a set of documents, each representing a company along with its description.
+
+3. **Embedding Model**: The project uses an embedding model to convert these company descriptions into numerical vectors, facilitating similarity calculations.
+
+4. **Similarity Search**: Users can input a profile and a company description. The project then performs a similarity search to find the most similar companies to the given profile based on the provided description.
+
+5. **Results**: The project returns a list of companies that are similar to the provided profile.
+
+## Usage
+
+To use this project, you can interact with it via an API or user interface. You will need to provide a profile and a company description, and the system will return a list of similar companies.
+
+## Dependencies
+
+This project relies on several external libraries and services to function effectively. These include:
+
+- **Express**: Used for building the API.
+- **Langchain**: Provides tools for natural language processing and vectorization.
+- **YC API**: Used to fetch company information.
+- **MemoryVectorStore**: Part of Langchain, used to store and search for vectorized documents.
 
 ## Getting Started
 
-1. Clone the repository.
-2. Install dependencies with `npm install`.
-3. Build the project with `npm run build`.
-4. Start the server with `npm start`.
+To set up and run this project, follow these steps:
 
-## Available Scripts
+1. Install the required dependencies and ensure the necessary services (e.g., YC website) are accessible.
 
-- `build`: Compiles the TypeScript code to JavaScript.
-- `start`: Starts the server.
-- `dev`: Starts the server in development mode with nodemon.
+2. Configure any environment variables or settings required for the project.
+
+3. Start the project, and it will be ready to accept requests for finding similar companies.
+
+## Contributors
+
+This project is maintained and developed by [Your Name or Your Team].
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the [License Name]. You can find more details in the LICENSE file.
+
+## Contact
+
+If you have any questions or need assistance with this project, please contact [Your Contact Information].
