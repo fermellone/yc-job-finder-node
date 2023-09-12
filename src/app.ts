@@ -24,8 +24,10 @@ app.use(express.json());
 // Routes
 setRoutes(app);
 
-app.listen(8001, () => {
-  console.log("Server is running on port 8001");
+const PORT = process.env.PORT || 8001;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 export default app;
