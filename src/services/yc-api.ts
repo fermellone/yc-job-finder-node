@@ -132,7 +132,5 @@ export const getCompaniesByIds = async (
       }
     );
 
-  console.log("companiesqty", companies.length);
-
   return companies;
 };

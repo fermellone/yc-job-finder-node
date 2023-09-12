@@ -6,9 +6,7 @@ export function setRoutes(app: express.Application): void {
   const indexController = new IndexController();
 
   app.post("/", (req: Request, res: Response, next: NextFunction) => {
-    console.log("getting index");
     indexController.getIndex(req, res, next);
-    console.log("got index");
   });
 
   app.use((error: Error, req: Request, res: Response, next: NextFunction) => {

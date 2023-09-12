@@ -7,6 +7,5 @@ export const getCompaniesVectorStore = async (
   documents: Document[],
   embeddingModel: OpenAIEmbeddings
 ) => {
-  console.log("documents", documents);
   return MemoryVectorStore.fromDocuments(documents, embeddingModel);
 };

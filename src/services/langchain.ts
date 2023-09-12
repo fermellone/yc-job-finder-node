@@ -3,18 +3,14 @@ import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { Company } from "../types";
 
 export const parseCompaniesToDocuments = (companies: Company[]) => {
-  console.log("companies in parsecompanies 1", companies.length);
   const metadata = companies.filter((company) => {
-    console.log("company", company);
     return company;
   });
-  console.log("metadata in parsecompanies 2", metadata.length);
 
   const contents = companies.map((company) => JSON.stringify(company));
 
   const documents = metadata
     .filter((metadata, index) => {
-      console.log("metadata", metadata);
       const isMetadataValid = !Object.values(metadata).includes(undefined);
 
       if (!isMetadataValid) {
@@ -24,15 +20,11 @@ export const parseCompaniesToDocuments = (companies: Company[]) => {
       return isMetadataValid;
     })
     .map((metadata, index) => {
-      console.log("metadata", metadata);
-      console.log("content", contents[index]);
       return new Document({
         metadata,
         pageContent: contents[index],
       });
     });
-
-  console.log("documents in parsecompanies", documents);
 
   return documents;
 };
