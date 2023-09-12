@@ -1,6 +1,6 @@
 import { NextFunction } from "express";
-import { getCompaniesVectorStore } from "../services/chroma";
 import {
+  getCompaniesVectorStore,
   getEmbeddingModel,
   parseCompaniesToDocuments,
 } from "../services/langchain";

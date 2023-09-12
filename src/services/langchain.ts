@@ -1,6 +1,7 @@
 import { Document } from "langchain/document";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { Company } from "../types";
+import { MemoryVectorStore } from "langchain/vectorstores/memory";
 
 export const parseCompaniesToDocuments = (companies: Company[]) => {
   const metadata = companies.filter((company) => {
@@ -36,3 +37,10 @@ export const getEmbeddingModel = () =>
     modelName: "text-embedding-ada-002",
     maxRetries: 2,
   });
+
+export const getCompaniesVectorStore = async (
+  documents: Document[],
+  embeddingModel: OpenAIEmbeddings
+) => {
+  return MemoryVectorStore.fromDocuments(documents, embeddingModel);
+};
