@@ -9,6 +9,10 @@ export function setRoutes(app: express.Application): void {
     indexController.getIndex(req, res, next);
   });
 
+  app.get("/healthcheck", (req: Request, res: Response, next: NextFunction) => {
+    res.status(200).send('Success')
+  });
+
   app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
     if (error instanceof HttpError) {
       console.error(error);
